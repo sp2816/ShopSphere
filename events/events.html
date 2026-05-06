@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopSphere - Events</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+        color: #333;
+    }
+
+    header {
+        background-color: #2874f0;
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .search-container {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .search-container input {
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fafafa;
+        padding: 15px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .product-card p {
+        font-size: 16px;
+        color: #777;
+    }
+</style>
+</head>
+<body>
+
+<header>ShopSphere - Explore Products</header>
+
+<div class="search-container">
+    <input type="text" id="searchBox" placeholder="Search products...">
+</div>
+
+<div class="products-container" id="productsContainer">
+    <!-- Dynamic Products Will Load Here -->
+</div>
+
+<script>
+const products = [
+    { name: "Casual T-Shirt", category: "Clothes", price: "₹499", img: "../images/men1.jpg" },
+    { name: "Denim Jeans", category: "Clothes", price: "₹999", img: "../images/men2.jpg" },
+    { name: "Smartphone Pro", category: "Phones", price: "₹29,999", img: "../images/mobile2.jpg" },
+    { name: "Wireless Earbuds", category: "Phones", price: "₹1,999", img: "https://m.media-amazon.com/images/I/61Y30DpqRVL._AC_UL480_FMwebp_QL65_.jpg" },
+    { name: "Organic Rice", category: "Grocery", price: "₹1,200", img: "../images/grocery1.jpg" },
+    { name: "Fresh Fruits Pack", category: "Grocery", price: "₹699", img: "../images/grocery5.jpg" },
+    { name: "Face Cream", category: "Beauty", price: "₹349", img: "../images/beauty2.jpg" },
+    { name: "Lipstick Set", category: "Beauty", price: "₹599", img: "../images/beauty3.jpg"}
+];
+
+function displayProducts(filteredProducts) {
+    const container = document.getElementById("productsContainer");
+    container.innerHTML = "";
+    filteredProducts.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+            <img src="${product.img}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.category}</p>
+            <p><strong>${product.price}</strong></p>
+        `;
+        container.appendChild(card);
+    });
+}
+
+document.getElementById("searchBox").addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query));
+    displayProducts(filtered);
+});
+
+// Initial Load
+displayProducts(products);
+</script>
+
+</body>
+</html>

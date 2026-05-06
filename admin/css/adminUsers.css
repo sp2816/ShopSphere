@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #16a085;
+}
+a {
+    color: #16a085;
+    text-decoration: none;
+}
+section {
+    margin-top: 30px;
+}

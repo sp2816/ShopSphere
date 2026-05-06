@@ -1,0 +1,645 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+}
+
+.dark {
+  background-color: #172337;
+}
+
+.light {
+  background-color: white;
+}
+
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 12px 30px;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2874f0;
+}
+
+.plus {
+  font-size: 14px;
+  color: #ffe500;
+  margin-left: 6px;
+}
+
+.search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 16px 8px 12px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  color: gray;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+
+.icon-item:hover {
+  background-color: #f0f0f0;
+}
+
+.icon-item i {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.icon-item span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  top: 100%;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Category Row */
+.category-row {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding: 15px 0;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  text-align: center;
+  width: 80px;
+  font-size: 14px;
+  color: #333;
+}
+
+.category-item a{
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.category-item:hover a {
+  text-decoration : underline;
+}
+
+/* Fashion Dropdown */
+/* Default hidden dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 10px 0;
+  z-index: 20;
+  min-width: 120px;
+}
+
+/* Show when active */
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ensure dropdown-category has relative positioning */
+.dropdown-category {
+  position: relative;
+  cursor: pointer;
+}
+
+
+/*#btn {
+  width : 100px;
+  background-color : transparent;
+  border : none;
+}
+*/
+
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2874f0;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+ 
+.category-item img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+/* Main Banner */
+/* Slideshow Container */
+/* Banner Container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Arrows */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 30px;
+  padding: 8px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  user-select: none;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.6);
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+
+
+/* Product Section */
+/* Product Section */
+.product-section {
+  background-color: white;
+  padding: 20px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-section h2 {
+  color: #2874f0;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* Product Row */
+.product-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.product-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Product Card */
+.product-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 180px;
+  text-align: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.product-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.product-card p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-header {
+    padding: 10px 20px;
+  }
+  
+  .search-bar {
+    margin: 0 20px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+  
+  .banner-container {
+    margin: 20px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .search-bar {
+    margin: 0;
+    width: 100%;
+    order: 2;
+  }
+  
+  .header-icons {
+    order: 3;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .logo {
+    order: 1;
+    text-align: center;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 15px;
+  }
+  
+  .category-card {
+    padding: 15px;
+  }
+  
+  .category-card h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 12px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .icon-item span {
+    font-size: 11px;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px;
+  }
+  
+  .category-card {
+    padding: 12px;
+  }
+  
+  .category-card img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .dropdown-content {
+    min-width: 150px;
+    font-size: 13px;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background-color: #172337;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.site-footer a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .main-header {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .logo {
+  color: #4fc3f7;
+}
+
+body.dark-mode .plus {
+  color: #ffeb3b;
+}
+
+body.dark-mode .search-bar input {
+  background: #2d2d2d;
+  color: #e0e0e0;
+  border: 1px solid #404040;
+}
+
+body.dark-mode .search-bar input::placeholder {
+  color: #888;
+}
+
+body.dark-mode .search-bar i {
+  color: #888;
+}
+
+body.dark-mode .nav-icons .icon-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-icons .icon-item:hover {
+  color: #4fc3f7;
+}
+
+body.dark-mode .dropdown-content {
+  background: #2d2d2d;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .dropdown-content a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background: #404040;
+}
+
+body.dark-mode .categories-grid .category-card {
+  background: #1f1f1f;
+  border: 1px solid #404040;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .categories-grid .category-card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .categories-grid .category-card h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .categories-grid .category-card p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .hero-section {
+  background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+}
+
+body.dark-mode .hero-content h1 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .hero-content p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .btn-primary {
+  background: #4fc3f7;
+  color: #121212;
+}
+
+body.dark-mode .btn-primary:hover {
+  background: #29b6f6;
+}
+
+body.dark-mode .site-footer {
+  background: #1f1f1f;
+  color: #e0e0e0;
+  border-top: 1px solid #404040;
+}
+
+body.dark-mode .site-footer a {
+  color: #4fc3f7;
+}
+
+body.dark-mode .site-footer a:hover {
+  color: #29b6f6;
+}
+
+/* Dark Mode Toggle Switch Styles */
+body.dark-mode .slider {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+body.dark-mode input:checked + .slider {
+  background-color: #4fc3f7;
+}
+
+body.dark-mode .slider:before {
+  background-color: #e0e0e0;
+}
+
+/* Dropdown show/hide functionality */
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+/* Smooth transitions */
+body, body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

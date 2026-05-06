@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Orders</title>
+  <link rel="stylesheet" href="../css/orders.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">ShopSphere <span class="plus">Explore Plus ✨</span></div>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search for Products, Brands and More">
+      <i class="fas fa-search"></i>
+    </div>
+  </header>
+
+  <a href="../php/homepage.php" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+  <main class="orders-container">
+    <h1>My Orders</h1>
+
+    <div class="order-card">
+      <img src="../images/watch.jpg" alt="Smartwatch">
+      <div class="order-info">
+        <h3>Noise Smartwatch</h3>
+        <p>Order ID: #ORD123456</p>
+        <p>Status: <span class="status delivered">Delivered</span></p>
+        <button class="btn">View Details</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <img src="../images/earpods.jpg" alt="Earbuds">
+      <div class="order-info">
+        <h3>Wireless Earbuds</h3>
+        <p>Order ID: #ORD789012</p>
+        <p>Status: <span class="status shipping">In Transit</span></p>
+        <button class="btn">Track Order</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <img src="../images/mobile1.jpg" alt="Printer">
+      <div class="order-info">
+        <h3>Canon Printer</h3>
+        <p>Order ID: #ORD345678</p>
+        <p>Status: <span class="status pending">Pending</span></p>
+        <button class="btn cancel">Cancel Order</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 ShopSphere Clone. All rights reserved.</p>
+    <p>
+      <a href="aboutus.html">About</a> |
+      <a href="customercare.html">Contact</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="privacy.html">Privacy</a>
+    </p>
+  </footer>
+   
+  <script src="../js/orders.js"></script>
+  
+  
+</body>
+</html>

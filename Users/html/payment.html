@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - ShopSphere</title>
+  <link rel="stylesheet" href="../css/payment.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">ShopSphere <span class="plus">Explore Plus ✨</span></div>
+  </header>
+
+  <a href="cart.php" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Cart</a>
+
+  <main class="payment-container">
+    <h1>Choose Payment Method</h1>
+
+    <form id="paymentForm">
+      <!-- Card Payment -->
+      <div class="payment-option">
+        <h3><input type="radio" name="payment" value="card" required> Credit/Debit Card</h3>
+        <div class="card-details">
+          <input type="text" placeholder="Card Number" maxlength="19">
+          <input type="text" placeholder="Cardholder Name">
+          <div class="card-row">
+            <input type="text" placeholder="MM/YY" maxlength="5">
+            <input type="text" placeholder="CVV" maxlength="3">
+          </div>
+        </div>
+      </div>
+
+      <!-- UPI -->
+      <div class="payment-option">
+        <h3><input type="radio" name="payment" value="upi"> UPI</h3>
+        <div class="upi-details">
+          <input type="text" placeholder="yourupi@bank">
+        </div>
+      </div>
+
+      <!-- Cash on Delivery -->
+      <div class="payment-option">
+        <h3><input type="radio" name="payment" value="cod"> Cash on Delivery (COD)</h3>
+      </div>
+
+      <button type="submit" class="pay-btn">Confirm Payment</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 ShopSphere. All rights reserved.</p>
+    <p>
+      <a href="aboutus.html">About</a> |
+      <a href="customercare.html">Contact</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="privacy.html">Privacy</a>
+    </p>
+  </footer>
+
+  <script src="../js/payment.js"></script>
+</body>
+</html>

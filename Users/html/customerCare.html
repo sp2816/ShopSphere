@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Care - Flipkart Clone</title>
+  <link rel="stylesheet" href="../css/customerCare.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  
+
+  <header>
+    <h1>Customer Care</h1>
+    <a href="../php/homepage.php" class="back-btn">← Go to Homepage</a>
+  </header>
+
+  <main class="content">
+    <section class="support-info">
+      <h2>Need Help?</h2>
+      <p>We are here to assist you 24/7. Choose an option below or contact our support team directly.</p>
+    </section>
+
+    <section class="help-options">
+      <div class="help-card" onclick="fn1()">
+        <i class="fas fa-box"></i>
+        <h3>Track Your Order</h3>
+        <p>Check the status of your order and delivery updates.</p>
+      </div>
+
+      <!--<div class="help-card">
+        <i class="fas fa-sync-alt"></i>
+        <h3>Returns & Refunds</h3>
+        <p>Request a return, refund or exchange easily.</p>
+      </div>
+
+      <div class="help-card">
+        <i class="fas fa-lock"></i>
+        <h3>Account Security</h3>
+        <p>Manage passwords, privacy settings and security options.</p>
+      </div>-->
+
+      <div class="help-card" onclick="fn4()">
+        <i class="fas fa-headset"></i>
+        <h3>Contact Support</h3>
+        <p>Call us at 1800-123-4567 or email support@flipkartclone.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopSphere Clone. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+	function fn1(){
+		window.location.href = "orders.html";
+	}
+	
+	function fn4(){
+		window.location.href = "contactUs.html";
+	}
+  </script>
+</body>
+</html>

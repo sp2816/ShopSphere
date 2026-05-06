@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ShopSphere</title>
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/adminDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Include Admin Navbar -->
+    <header class="main-header">
+        <div class="logo">ShopSphere<span class="plus">Admin</span></div>
+        <nav style="flex:1;">
+            <ul class="admin-nav-items">
+                <li><a class="link" href="../php/dashboard.php" style="background: #f1f3f6; color: #2874f0;">Dashboard</a></li>
+                <li><a class="link" href="../php/products.php">Products</a></li>
+                <li><a class="link" href="../php/orders.php">Orders</a></li>
+                <li><a class="link" href="../php/users.php">Users</a></li>
+            </ul>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 20px; position: relative;">
+            <div class="dropdown" style="position: relative;">
+                <img src="../../images/men1.jpg" alt="User" id="userImg" style="width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid #2874f0; cursor:pointer;">
+                <div class="dropdown-content right" id="userDropdown" style="right:0; min-width:140px;">
+                    <a href="../php/profile.php">View Profile</a>
+                    <a href="../php/settings.php">Settings</a>
+                    <a href="../php/logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <div class="welcome-content">
+                <h1>Welcome to Admin Dashboard</h1>
+                <p>Manage your e-commerce platform efficiently</p>
+            </div>
+            <div class="welcome-icon">
+                <i class="fas fa-tachometer-alt"></i>
+            </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon users">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Users</h3>
+                    <p class="stat-number">1,234</p>
+                    <span class="stat-change positive">+12% this month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon products">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Products</h3>
+                    <p class="stat-number">856</p>
+                    <span class="stat-change positive">+5% this month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orders">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Orders</h3>
+                    <p class="stat-number">2,167</p>
+                    <span class="stat-change positive">+8% this month</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon revenue">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Revenue</h3>
+                    <p class="stat-number">₹45,678</p>
+                    <span class="stat-change positive">+15% this month</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <a href="../php/viewUsers.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Manage Users</h3>
+                        <p>View, edit, and manage user accounts</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="../php/products.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Manage Products</h3>
+                        <p>Add, edit, and organize your inventory</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="../php/orders.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Manage Orders</h3>
+                        <p>Process and track customer orders</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="../php/settings.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>System Settings</h3>
+                        <p>Configure platform settings and preferences</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="../php/analytics.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Analytics</h3>
+                        <p>View sales reports and performance metrics</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="../php/categories.php" class="action-card">
+                    <div class="action-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="action-content">
+                        <h3>Categories</h3>
+                        <p>Manage product categories and tags</p>
+                    </div>
+                    <div class="action-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <div class="activity-header">
+                <h2>Recent Activity</h2>
+                <a href="activity.php" class="view-all">View All</a>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>New user registered:</strong> john.doe@email.com</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>New order placed:</strong> Order #12345 for ₹2,499</p>
+                        <span class="activity-time">4 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>Product updated:</strong> iPhone 15 Pro - stock updated</p>
+                        <span class="activity-time">6 hours ago</span>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>New review received:</strong> 5-star rating for Samsung Galaxy</p>
+                        <span class="activity-time">8 hours ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar dropdown functionality
+        document.getElementById('userImg').addEventListener('click', function() {
+            const dropdown = document.getElementById('userDropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('userDropdown');
+            const userImg = document.getElementById('userImg');
+            if (!userImg.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Add hover effects to action cards
+        document.querySelectorAll('.action-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Simulate real-time stats updates (optional)
+        function updateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                // Add subtle animation effect
+                stat.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    stat.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+
+        // Update stats every 30 seconds (for demo purposes)
+        setInterval(updateStats, 30000);
+    </script>
+</body>
+</html>
